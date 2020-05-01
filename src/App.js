@@ -3,9 +3,10 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import Counter from './components/counter';
 import { Route, Switch, Link, BrowserRouter as Router } from 'react-router-dom';
-import Counter from './components/counter';
-import About from './components/about';
-import Gallery from './components/gallery';
+import Counter from './components/Counter';
+import About from './components/About';
+import Gallery from './components/Gallery';
+import HitDetails from './components/HitDetails';
 
 function App() {
   return (
@@ -39,12 +40,13 @@ function App() {
           </li>
         </ul>
       </nav>
-      <div className='container'>
+      <div className='m-4'>
         <Switch>
           <Route exact path='/home'></Route>
           <Route exact path='/counter' component={Counter}></Route>
           <Route path='/about' component={About}></Route>
           <Route path='/gallery' component={Gallery}></Route>
+          <Route path='/hitDetails/:id' component={HitDetails}></Route>
         </Switch>
       </div>
     </Router>
